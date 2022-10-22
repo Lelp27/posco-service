@@ -2,10 +2,10 @@ import streamlit as st
 import json
 import time
 import datetime
+from math import floor
 
 
 def write_db(n):
-    print (st.session_state[f"user_key{n}"] == '')
     if st.session_state[f'user_key{n}'] == '':
         st.error("경고! 사용자 이름을 적어주세요 (새로고침 하면 다시 가능합니다)")
         st.stop()
@@ -17,7 +17,7 @@ def write_db(n):
         json.dump(db, data, indent=2)
 
 def get_min(time_data):
-    return (str(datetime.timedelta(seconds = time_data))[2:7])
+    return (str(round(floor(time_data)/60, 2)).replace('.', ':'))
 
 def timer_form(n):
     with st.form(f'form{n}'):
@@ -36,7 +36,7 @@ def timer_form(n):
                 st.experimental_rerun()
 
 def Washing_form(n, off_button=True, default_time = 38):
-    st.number_input("세탁 시간", value=default_time, key=f"time_key{n}")
+    st.number_input("세탁 시간", max_value=60, value=default_time, key=f"time_key{n}")
     st.text_input("사용자", placeholder="A2 홍길동", key=f"user_key{n}")
 
     if off_button:
@@ -57,7 +57,7 @@ def check_used(n):
     user = db['User']
     left_time = (db['Current'] + (db['Use']*60)) - time.time()
 
-    if left_time > 0:
+    if left_time > -600:
         return ([True, user, get_min(left_time)])
     else:
         return ([False])
@@ -84,10 +84,14 @@ st.set_page_config(page_title="Booking", layout="centered", \
         'About': 'Laundry Service for Posco Edu'})
 
 st.header("Posco Edu 20th")
-st.warning("오류 발생시 페이지 새로고침 하세요")
-st.warning("실수로 등록 시 Overwrite 클릭 후 0분으로 다시 등록하시면 됩니다.")
+t_col1, t_col2 = st.columns([3,2])
+with t_col1:
+    st.warning("* 오류 발생 시 페이지 새로고침 해주세요 \\\n * 실수로 등록 시 OverWrite 클릭 후 -10분으로 등록해주세요")
+with t_col2:
+    st.success("시간은 -10분 까지 저장 됩니다.")
+
 st.markdown("---")
-if st.button("Time Update", key='update'):
+if st.button("⌛ Time Update", key='update'):
     # with st.spinner("Text = Progressing"):
         # time.sleep(5)
     st.experimental_rerun()
@@ -140,7 +144,7 @@ with col5:
     if check5[0]:
         timer_form(5)
     else:
-        Washing_form(n = 5)
+        Washing_form(n = 5, default_time=20)
 
 
 #ph = st.empty()
