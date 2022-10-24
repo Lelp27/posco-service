@@ -17,7 +17,13 @@ def write_db(n):
         json.dump(db, data, indent=2)
 
 def get_min(time_data):
-    return (str(round(floor(time_data)/60, 2)).replace('.', ':'))
+    tmp = floor(time_data)
+    minu = (tmp // 60)
+    sec = round(tmp - (minu*60), 2)
+    if time_data > 0:
+        return (str(minu) + ":" + str(sec))
+    else:
+        return (str(minu + 1) + ":" + str(60-sec))
 
 def timer_form(n):
     with st.form(f'form{n}'):
@@ -64,7 +70,7 @@ def check_used(n):
 
 
 # Session State
-for i in range(1, 6):
+for i in range(1, 7):
     if f'overwrite{i}' not in st.session_state:
         st.session_state[f'overwrite{i}'] = False
 
@@ -102,7 +108,7 @@ if st.button("⌛ Time Update", key='update'):
 col1, col2, col3 = st.columns([1, 1, 1], gap="Large")
 
 with col1:
-    st.subheader("세탁기 1")
+    st.markdown("**세탁기(작은방)**")
     check1 = check_used(1)
     if check1[0]:
         timer_form(1)
@@ -110,7 +116,7 @@ with col1:
         Washing_form(n = 1)
     
 with col2:
-    st.subheader("세탁기 2")
+    st.markdown("**세탁기(큰방 왼)**")
     check2 = check_used(2)
     if check2[0]:
         timer_form(2)
@@ -118,7 +124,7 @@ with col2:
         Washing_form(n = 2)
 
 with col3:
-    st.subheader("세탁기 3")
+    st.markdown("**세탁기(큰방 오른)**")
     check3 = check_used(3)
     if check3[0]:
         timer_form(3)
@@ -129,24 +135,30 @@ st.write("")
 st.markdown("---")
 
 # Dry
-col4, col5 = st.columns([1,1], gap="Large")
+col4, col5, col6 = st.columns([1,1,1], gap="Large")
 with col4:
-    st.subheader("건조기 1")
+    st.markdown("**건조기(작은방)**")
     check4 = check_used(4)
     if check4[0]:
         timer_form(4)
     else:
         Washing_form(n = 4, default_time=20)
 
-with col5:
-    st.subheader("건조기 2")
+with col5: 
+    st.markdown("**건조기(큰방 왼)**")
     check5 = check_used(5)
     if check5[0]:
         timer_form(5)
     else:
         Washing_form(n = 5, default_time=20)
 
-
+with col6: 
+    st.markdown("**건조기(큰방 오른)**")
+    check6 = check_used(6)
+    if check6[0]:
+        timer_form(6)
+    else:
+        Washing_form(n = 6, default_time=20)
 #ph = st.empty()
 #N = 30*60
 #for secs in range(N,0,-1):
