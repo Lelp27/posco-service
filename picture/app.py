@@ -57,11 +57,11 @@ with tab2:
                 st.stop()
             prefix = os.path.splitext(photo.name)[-1]
             # Photo Save
-            with open(f'./photos/{name}.{prefix}', 'wb') as f:
+            with open(f'./photos/{name}{prefix}', 'wb') as f:
                 f.write(photo.getbuffer())
             # DB save
             name = name.replace(' ', '_')
-            db[f'{name}'] = {'Caption': f'{user_caption}', 'Photo':f"./photos/{name}.{prefix}"}
+            db[f'{name}'] = {'Caption': f'{user_caption}', 'Photo':f"./photos/{name}{prefix}"}
             with open(db_path, 'w', encoding='UTF-8') as data:
                 json.dump(db, data, indent=2, ensure_ascii=False)
             st.success("등록되었습니다 !")
