@@ -1,7 +1,7 @@
 {
   "A2_박성군": {
-    "Caption": "한글실험",
-    "Photo": "./photos/A2_박성군.png"
+    "Caption": "학교",
+    "Photo": "./photos/A2_박성군.jpg"
   },
   "A3_박성군": {
     "Caption": "a",
@@ -14,5 +14,17 @@
   "B1_박성군": {
     "Caption": "테스트 중 입니다!",
     "Photo": "./photos/B1_박성군.jpg"
+  },
+  "A1_박성군": {
+    "Caption": "세로 테스트",
+    "Photo": "./photos/A1_박성군.jpg"
+  },
+  "Test": {
+    "Caption": "Test",
+    "Photo": "./photos/Test.jpg"
+  },
+  "TT": {
+    "Caption": "Test",
+    "Photo": "./photos/TT.jpg"
   }
 }
