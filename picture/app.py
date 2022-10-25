@@ -1,5 +1,4 @@
 import streamlit as st
-from glob import glob
 import random
 from PIL import Image
 import json
@@ -21,24 +20,26 @@ db_path = './photodb.json'
 with open(db_path, 'r') as data:
     db = json.load(data)
 
-captions = ['A', 'B', 'C', 'D', 'E', 'F', '']
+name = list(db.keys())
+caption = [db[i]['Caption'] for i in name]
 
 # Get Image
-image_path = glob("*.png")
-images = [Image.open(i) for i in image_path]
+images = [Image.open(f'./photos/{i}.png') for i in name]
 
-
-
+## Body
 tab1, tab2 = st.tabs(["Gallery", "Upload Photo"])
 
-## Gallery Page, Column을 나눠서 COlumn 사이 Margin 결정하기
+### Gallery
 with tab1:
-    # if 랜덤:
-    random.shuffle(image_path)
 
-    st.image(images, width=300, caption=captions)
-    # 랜덤 먼저 작성
-    # A1, 2, 3, 4 > A
+    col1, col2, col3, col4, col5, col6 = st.columns([1,1,1,1,1,1], gap='medium') 
+    for i in range(len(images)):
+        eval(f'col{i+1}').markdown(f'<center><b>{name[i]}</b></center>', unsafe_allow_html=True)
+        eval(f'col{i+1}').image(images[i], use_column_width='auto')
+        eval(f'col{i+1}').code(caption[i])
+    
+        # if 랜덤:
+        #random.shuffle(image_path)
     
 
 # UPload System

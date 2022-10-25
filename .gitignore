@@ -1,6 +1,9 @@
 # by Kun
 db.json
 ftp/
+./picture/photos/*
+*.png
+picture/photos
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
