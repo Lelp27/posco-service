@@ -1,10 +1,18 @@
 {
-  "A2_\ubc15\uc131\uad70": {
-    "Caption": "a",
-    "Photo": "./photos/A2_\ubc15\uc131\uad70.png"
+  "A2_박성군": {
+    "Caption": "한글실험",
+    "Photo": "./photos/A2_박성군.png"
   },
-  "A3_\ubc15\uc131\uad70": {
+  "A3_박성군": {
     "Caption": "a",
-    "Photo": "./photos/A3_\ubc15\uc131\uad70.png"
+    "Photo": "./photos/A3_박성군.png"
+  },
+  "A4_박성군": {
+    "Caption": "a",
+    "Photo": "./photos/A4_박성군..jpg"
+  },
+  "B1_박성군": {
+    "Caption": "테스트 중 입니다!",
+    "Photo": "./photos/B1_박성군..jpg"
   }
 }
