@@ -1,9 +1,9 @@
 {
   "num1": {
     "Number": 1,
-    "Current": 1666494876.650821,
-    "User": "Test",
-    "Use": 38
+    "Current": 1667712831.1048656,
+    "User": "\uc131\uad70",
+    "Use": 43
   },
   "num2": {
     "Number": 2,
@@ -13,9 +13,9 @@
   },
   "num3": {
     "Number": 3,
-    "Current": 1666446974.512402,
-    "User": "",
-    "Use": 38
+    "Current": 1667214326.7612588,
+    "User": "1",
+    "Use": -10
   },
   "num4": {
     "Number": 4,
@@ -31,8 +31,8 @@
   },
   "num6": {
     "Number": 6,
-    "Current": 1666511885.8544893,
-    "User": "\uc2e0\uc6d0\ubbf8\uc0c1",
-    "Use": 8
+    "Current": 1667215200.4115415,
+    "User": "\uc131\uad70",
+    "Use": 40
   }
 }

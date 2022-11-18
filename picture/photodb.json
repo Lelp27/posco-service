@@ -3,28 +3,36 @@
     "Caption": "학교",
     "Photo": "./photos/A2_박성군.jpg"
   },
-  "A3_박성군": {
-    "Caption": "a",
-    "Photo": "./photos/A3_박성군.png"
-  },
   "A4_박성군": {
     "Caption": "a",
     "Photo": "./photos/A4_박성군.jpg"
   },
-  "B1_박성군": {
-    "Caption": "테스트 중 입니다!",
-    "Photo": "./photos/B1_박성군.jpg"
+  "A2_전예찬": {
+    "Caption": "",
+    "Photo": "./photos/A2_전예찬.jpg"
   },
-  "A1_박성군": {
-    "Caption": "세로 테스트",
-    "Photo": "./photos/A1_박성군.jpg"
+  "A2_성군": {
+    "Caption": "시계",
+    "Photo": "./photos/A2_성군.png"
   },
-  "Test": {
-    "Caption": "Test",
-    "Photo": "./photos/Test.jpg"
+  "": {
+    "Caption": "",
+    "Photo": "./photos/.jpeg"
   },
-  "TT": {
-    "Caption": "Test",
-    "Photo": "./photos/TT.jpg"
+  "A2_김민지": {
+    "Caption": "",
+    "Photo": "./photos/A2_김민지.jpeg"
+  },
+  "갓경로": {
+    "Caption": "",
+    "Photo": "./photos/갓경로.jpeg"
+  },
+  "A2전예찬2": {
+    "Caption": "",
+    "Photo": "./photos/A2전예찬2.jpg"
+  },
+  "A2_장동언": {
+    "Caption": "",
+    "Photo": "./photos/A2_장동언.jpeg"
   }
 }
