@@ -1,6 +1,7 @@
 import streamlit as st
 #from multiapp import MultiApp
 import utils
+from PIL import Image
 
 
 def app():
@@ -17,7 +18,6 @@ def app():
     )
 
     st.title("Posco Edu 20th A2")
-    from PIL import Image
     image = Image.open('/home/piai/workspace/posco-service/bigdata/data/posco-logo.png')
     st.image(image)
     """
@@ -26,33 +26,30 @@ def app():
     
     ---
     
-    Page 1 `View PDF`를 통해서 발표 슬라이드를 보실 수 있습니다.  
+    `View PDF`를 통해서 발표 슬라이드를 보실 수 있습니다.  
     """
     st.sidebar.title("Posco Edu 20th A2")
     st.sidebar.write(
     """
+    안녕하세요 Posco AI & Big data 아카데미 20기 A2조 입니다.  
+    BigData Project 관련 데이터를 모아 시연용 Web App을 제작했습니다.
+    
+    Page 1 : Introduce & Presentation  
+    Page 2 : Model 시연
+    
     ### Source Code
-    [Github](Lelp27/github.com) : Lelp27/github.com/posco-service  
-    ![asdf]('/home/piai/workspace/posco-service/bigdata/data/posco-logo.png')
+    [Github](https://github.com/Lelp27/posco-service/tree/main/bigdata) : github.com/Lelp27
 
     """
     )
-    # st.sidebar.subheader("Seong-Kun Bak *Lelp27/github.com*")
-    # st.sidebar.markdown("---")
-    # st.sidebar.text("")
 
-    st.download_button('Presentation PDF', '/home/piai/workspace/posco-service/bigdata/data/presentation.pdf')
-    
-    with st.expander('View PDF'):
+    st.download_button('⬇️ Download PDF', '/home/piai/workspace/posco-service/bigdata/data/presentation.pdf')
+    with st.expander('View PDF on Web. \n 모바일에선 불가능 합니다..'):
         pdf_display = utils.show_pdf("/home/piai/workspace/posco-service/bigdata/data/presentation.pdf")
         st.markdown(pdf_display, unsafe_allow_html=True)
-# app = MultiApp()
+    image2 = Image.open('/home/piai/workspace/posco-service/bigdata/data/presentation_front.png')
+    st.image(image2)
 
-# # Add all your application here
-# app.add_app("Introduce", page_1.app)
-# app.add_app("Improvement Plan", page_2.app)
-# app.add_app("Model Demo", model_demo.app)
 
-# The main app
 if __name__ == "__main__":
     app()
