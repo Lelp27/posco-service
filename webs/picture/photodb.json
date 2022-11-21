@@ -1,0 +1,38 @@
+{
+  "A2_박성군": {
+    "Caption": "학교",
+    "Photo": "./photos/A2_박성군.jpg"
+  },
+  "A4_박성군": {
+    "Caption": "a",
+    "Photo": "./photos/A4_박성군.jpg"
+  },
+  "A2_전예찬": {
+    "Caption": "",
+    "Photo": "./photos/A2_전예찬.jpg"
+  },
+  "A2_성군": {
+    "Caption": "시계",
+    "Photo": "./photos/A2_성군.png"
+  },
+  "": {
+    "Caption": "",
+    "Photo": "./photos/.jpeg"
+  },
+  "A2_김민지": {
+    "Caption": "",
+    "Photo": "./photos/A2_김민지.jpeg"
+  },
+  "갓경로": {
+    "Caption": "",
+    "Photo": "./photos/갓경로.jpeg"
+  },
+  "A2전예찬2": {
+    "Caption": "",
+    "Photo": "./photos/A2전예찬2.jpg"
+  },
+  "A2_장동언": {
+    "Caption": "",
+    "Photo": "./photos/A2_장동언.jpeg"
+  }
+}
